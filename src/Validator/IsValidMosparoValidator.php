@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -34,10 +34,10 @@ class IsValidMosparoValidator extends ConstraintValidator
 
     public function getClient(string $project = 'default'): MosparoClient
     {
-        $host = $this->parameters->get(sprintf('mosparo.%s.%s', $project, 'instance_url'));
-        $publicKey = $this->parameters->get(sprintf('mosparo.%s.%s', $project, 'public_key'));
-        $privateKey = $this->parameters->get(sprintf('mosparo.%s.%s', $project, 'private_key'));
-        $verifySsl = $this->parameters->get(sprintf('mosparo.%s.%s', $project, 'verify_ssl'));
+        $host = $this->parameters->get(\sprintf('mosparo.%s.%s', $project, 'instance_url'));
+        $publicKey = $this->parameters->get(\sprintf('mosparo.%s.%s', $project, 'public_key'));
+        $privateKey = $this->parameters->get(\sprintf('mosparo.%s.%s', $project, 'private_key'));
+        $verifySsl = $this->parameters->get(\sprintf('mosparo.%s.%s', $project, 'verify_ssl'));
 
         return MosparoClient::make($host, $publicKey, $privateKey, $verifySsl);
     }

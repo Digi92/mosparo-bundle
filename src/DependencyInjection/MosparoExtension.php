@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -31,11 +31,11 @@ class MosparoExtension extends Extension
             if ('projects' === $key) {
                 foreach ($value as $project => $settings) {
                     foreach ($settings as $settingKey => $settingValue) {
-                        $container->setParameter(sprintf('mosparo.%s.%s', $project, $settingKey), $settingValue);
+                        $container->setParameter(\sprintf('mosparo.%s.%s', $project, $settingKey), $settingValue);
                     }
                 }
             } else {
-                $container->setParameter(sprintf('mosparo.%s', $key), $value);
+                $container->setParameter(\sprintf('mosparo.%s', $key), $value);
             }
         }
 

@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -35,7 +35,7 @@ trait FormTrait
     protected FormBuilder $builder;
     protected EventDispatcherInterface $dispatcher;
 
-    private function getBuilder(string $name = 'name', string $dataClass = null, array $options = []): FormBuilder
+    private function getBuilder(string $name = 'name', ?string $dataClass = null, array $options = []): FormBuilder
     {
         $options = array_replace(
             [

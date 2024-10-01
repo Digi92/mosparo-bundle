@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -40,11 +40,11 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
     public function __construct(
-        private EventDispatcherInterface $dispatcher
+        private EventDispatcherInterface $dispatcher,
     ) {
     }
 
-    public function normalize(mixed $object, string $format = null, array $context = []): array
+    public function normalize(mixed $object, ?string $format = null, array $context = []): array
     {
         if (!$object instanceof FormInterface) {
             throw new \InvalidArgumentException('The object must be an instance of "Symfony\Component\Form\FormInterface".');
@@ -53,7 +53,7 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
         return $this->convertFormToArray($object);
     }
 
-    public function supportsNormalization(mixed $data, string $format = null): bool
+    public function supportsNormalization(mixed $data, ?string $format = null): bool
     {
         return $data instanceof FormInterface && $data->isSubmitted();
     }
@@ -113,7 +113,7 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
 
         if (!$form->isRoot()) {
             if (
-                \in_array(\get_class($form), $ignoredFieldTypes, true)
+                \in_array($form::class, $ignoredFieldTypes, true)
                 || \in_array(\get_class($form->getConfig()->getType()), $ignoredFieldTypes, true)
                 || \in_array(\get_class($form->getConfig()->getType()->getInnerType()), $ignoredFieldTypes, true)
             ) {
@@ -128,7 +128,7 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
             }
 
             if (
-                \in_array(\get_class($form), $verifiableFieldTypes, true)
+                \in_array($form::class, $verifiableFieldTypes, true)
                 || \in_array(\get_class($form->getConfig()->getType()), $verifiableFieldTypes, true)
                 || \in_array(\get_class($form->getConfig()->getType()->getInnerType()), $verifiableFieldTypes, true)
             ) {
@@ -140,15 +140,15 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
     private function getKeyForField(FormInterface $field): string
     {
         $parent = null;
-        if ($field->getParent()) {
+        if ($field->getParent() instanceof FormInterface) {
             $parent = $this->getKeyForField($field->getParent());
         }
 
-        $name = (string) $field->getName();
-        if ($parent) {
-            $key = sprintf('%s[%s]', $parent, $name);
-        } else {
-            $key = $name;
+        $name = $field->getName();
+
+        $key = $name;
+        if (null !== $parent) {
+            $key = \sprintf('%s[%s]', $parent, $name);
         }
 
         return $key;

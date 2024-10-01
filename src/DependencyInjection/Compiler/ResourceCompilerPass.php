@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -17,9 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class ResourceCompilerPass implements CompilerPassInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function process(ContainerBuilder $container): void
     {
         $container->setParameter(

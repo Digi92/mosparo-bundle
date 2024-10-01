@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -155,6 +155,6 @@ EOF;
 
     private function assertParameter(mixed $value, string $key): void
     {
-        self::assertSame($value, $this->configuration->getParameter($key), sprintf('%s parameter is correct', $key));
+        self::assertSame($value, $this->configuration->getParameter($key), \sprintf('%s parameter is correct', $key));
     }
 }

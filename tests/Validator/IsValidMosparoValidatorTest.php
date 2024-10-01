@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -63,7 +63,7 @@ class IsValidMosparoValidatorTest extends ConstraintValidatorTestCase
         array $issues = [],
         ?string $submitToken = self::SUBMIT_TOKEN,
         ?string $validationToken = self::VALIDATION_TOKEN,
-        ?bool $enabled = true
+        ?bool $enabled = true,
     ): ConstraintValidatorInterface|InvocationMocker {
         $requestStack = $this->createMock(RequestStack::class);
         $request = $this->createMock(Request::class);
@@ -113,7 +113,7 @@ class IsValidMosparoValidatorTest extends ConstraintValidatorTestCase
         array $issues = [],
         ?string $submitToken = self::SUBMIT_TOKEN,
         ?string $validationToken = self::VALIDATION_TOKEN,
-        ?bool $enabled = true
+        ?bool $enabled = true,
     ): void {
         $this->context = $this->createContext();
         $this->validator = $this->makeValidator($submittable, $valid, $verifiedFields, $issues, $submitToken, $validationToken, $enabled);

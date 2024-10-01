@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -130,7 +130,7 @@ class MosparoClientTest extends TestCase
         $formSignature = $requestHelper->createFormDataHmacHash($preparedFormData);
 
         $validationSignature = $requestHelper->createHmacHash(self::VALIDATION_TOKEN);
-        $verificationSignature = $requestHelper->createHmacHash(sprintf('%s%s', $validationSignature, $formSignature));
+        $verificationSignature = $requestHelper->createHmacHash(\sprintf('%s%s', $validationSignature, $formSignature));
 
         // Set the response
         $this->handler->append(

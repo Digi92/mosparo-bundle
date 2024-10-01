@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -35,6 +35,7 @@ class Configuration implements ConfigurationInterface
                     if (\array_key_exists('projects', $v) || \array_key_exists('project', $v)) {
                         return false;
                     }
+
                     // Is there actually anything to use once excluded keys are considered?
                     return (bool) array_diff_key($v, $excludedKeys);
                 })

@@ -3,7 +3,7 @@
 /**
  * @package   MosparoBundle
  * @author    Arnaud RITTI <arnaud.ritti@gmail.com>
- * @copyright 2023 Arnaud RITTI
+ * @copyright 2024 Arnaud RITTI
  * @license   MIT <https://github.com/arnaud-ritti/mosparo-bundle/blob/main/LICENSE.md>
  * @link      https://github.com/arnaud-ritti/mosparo-bundle
  */
@@ -26,7 +26,7 @@ class MosparoType extends AbstractType
     public function __construct(
         private string $config,
         private ParameterBagInterface $parameters,
-        private bool $enabled = true
+        private bool $enabled = true,
     ) {
     }
 
@@ -65,24 +65,24 @@ class MosparoType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
-        $hostKey = sprintf('mosparo.%s.%s', $options['project'], 'instance_url');
+        $hostKey = \sprintf('mosparo.%s.%s', $options['project'], 'instance_url');
         $host = $this->parameters->get($hostKey);
         if (false === filter_var($host, \FILTER_VALIDATE_URL)) {
-            throw new Exception(sprintf('Please check your "%s". "%s" is not a valid URL', $hostKey, $host));
+            throw new Exception(\sprintf('Please check your "%s". "%s" is not a valid URL', $hostKey, $host));
         }
 
-        $uuidKey = sprintf('mosparo.%s.%s', $options['project'], 'uuid');
+        $uuidKey = \sprintf('mosparo.%s.%s', $options['project'], 'uuid');
         $uuid = $this->parameters->get($uuidKey);
         if (false === Uuid::isValid($uuid)) {
-            throw new Exception(sprintf('Please check your "%s". "%s" is not a valid UUID', $uuidKey, $uuid));
+            throw new Exception(\sprintf('Please check your "%s". "%s" is not a valid UUID', $uuidKey, $uuid));
         }
 
         $view->vars['mosparo'] = [
             'enabled' => $this->enabled,
             'instance_url' => $host,
             'uuid' => $uuid,
-            'public_key' => $this->parameters->get(sprintf('mosparo.%s.%s', $options['project'], 'public_key')),
-            'private_key' => $this->parameters->get(sprintf('mosparo.%s.%s', $options['project'], 'private_key')),
+            'public_key' => $this->parameters->get(\sprintf('mosparo.%s.%s', $options['project'], 'public_key')),
+            'private_key' => $this->parameters->get(\sprintf('mosparo.%s.%s', $options['project'], 'private_key')),
             'options' => [
                 'allowBrowserValidation' => $options['allowBrowserValidation'],
                 'cssResourceUrl' => $options['cssResourceUrl'],
