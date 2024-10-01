@@ -31,7 +31,7 @@ class MosparoTypeTest extends TypeTestCase
     {
         parent::tearDown();
         $this->configuration = null;
-        $this->factory = null;
+        //$this->factory = null;
     }
 
     protected function createSampleConfiguration(): void
