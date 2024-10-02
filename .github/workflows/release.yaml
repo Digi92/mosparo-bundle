@@ -38,11 +38,11 @@ jobs:
       - name: 'Run PHPUnit tests'
         run: vendor/bin/simple-phpunit --coverage-clover clover.xml
 
-      - name: 'Run codacy-coverage-reporter'
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: clover.xml
+#      - name: 'Run codacy-coverage-reporter'
+#        uses: codacy/codacy-coverage-reporter-action@v1
+#        with:
+#          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+#          coverage-reports: clover.xml
 
       - uses: google-github-actions/release-please-action@v4
         with:
