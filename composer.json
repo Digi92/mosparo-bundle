@@ -1,6 +1,6 @@
 {
-    "name": "arnaud-ritti/mosparo-bundle",
-    "version": "1.2.2",
+    "name": "digi92/mosparo-bundle",
+    "version": "1.2.3",
     "type": "symfony-bundle",
     "description": "A Symfony bundle for mosparo spam protection",
     "keywords": [
@@ -9,12 +9,16 @@
         "spam protection",
         "recaptcha"
     ],
-    "homepage": "https://github.com/arnaud-ritti/mosparo-bundle",
+    "homepage": "https://github.com/Digi92/mosparo-bundle",
     "license": "MIT",
     "authors": [
         {
             "name": "Arnaud RITTI",
             "homepage": "https://github.com/arnaud-ritti"
+        },
+        {
+            "name": "S.Zander",
+            "homepage": "https://github.com/Digi92"
         }
     ],
     "require": {

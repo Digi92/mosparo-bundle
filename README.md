@@ -11,11 +11,9 @@
     This bundle adds the required functionality to use mosparo in your Symfony form.
 </p>
 
-![GitHub](https://img.shields.io/github/license/arnaud-ritti/mosparo-bundle)
-[![GitHub checks](https://github.com/arnaud-ritti/mosparo-bundle/actions/workflows/release.yaml/badge.svg)](https://github.com/arnaud-ritti/mosparo-bundle/actions/workflows/release.yaml)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/arnaud-ritti/mosparo-bundle)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f5b1debea2c4a169e44ee5e09397927)](https://app.codacy.com/gh/arnaud-ritti/mosparo-bundle/dashboard?utm_source=gh\&utm_medium=referral\&utm_content=\&utm_campaign=Badge_grade)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/0f5b1debea2c4a169e44ee5e09397927)](https://app.codacy.com/gh/arnaud-ritti/mosparo-bundle/dashboard?utm_source=gh\&utm_medium=referral\&utm_content=\&utm_campaign=Badge_coverage)
+![GitHub](https://img.shields.io/github/license/Digi92/mosparo-bundle)
+[![GitHub checks](https://github.com/Digi92/mosparo-bundle/actions/workflows/release.yaml/badge.svg)](https://github.com/Digi92/mosparo-bundle/actions/workflows/release.yaml)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Digi92/mosparo-bundle)
 
 ***
 
@@ -36,7 +34,7 @@ To use the plugin, you must meet the following requirements:
 Install this bundle by using composer:
 
 ```text
-composer require arnaud-ritti/mosparo-bundle
+composer require Digi92/mosparo-bundle
 ```
 
 ## Configuration
