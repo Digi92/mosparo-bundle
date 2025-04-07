@@ -48,6 +48,7 @@ class MosparoType extends AbstractType
                 'inputFieldSelector' => '[name]:not(.mosparo__ignored-field)',
                 'loadCssResource' => true,
                 'requestSubmitTokenOnInit' => true,
+                'nonce' => null
             ]
         );
 
@@ -58,6 +59,7 @@ class MosparoType extends AbstractType
         $resolver->setAllowedTypes('requestSubmitTokenOnInit', 'bool');
         $resolver->setAllowedTypes('inputFieldSelector', 'string');
         $resolver->setAllowedTypes('cssResourceUrl', 'string');
+        $resolver->setAllowedTypes('nonce', 'string');
     }
 
     /**
@@ -83,6 +85,7 @@ class MosparoType extends AbstractType
             'uuid' => $uuid,
             'public_key' => $this->parameters->get(\sprintf('mosparo.%s.%s', $options['project'], 'public_key')),
             'private_key' => $this->parameters->get(\sprintf('mosparo.%s.%s', $options['project'], 'private_key')),
+            'nonce' => $options['nonce'],
             'options' => [
                 'allowBrowserValidation' => $options['allowBrowserValidation'],
                 'cssResourceUrl' => $options['cssResourceUrl'],

@@ -2,7 +2,7 @@
     {% if mosparo.enabled -%}
     <div id="{{ id }}"></div>
     <script src="{{ mosparo.instance_url }}/build/mosparo-frontend.js" defer></script>
-    <script>
+    <script{% if mosparo.nonce is defined and mosparo.nonce is not empty %} nonce="{{ mosparo.nonce }}"{% endif %}>
       window.mosparoLayer = window.mosparoLayer || [];
       window.addEventListener('load', (event) => {
         mosparoLayer.push(new mosparo('{{ id }}', '{{ mosparo.instance_url }}', '{{ mosparo.uuid }}', '{{ mosparo.public_key }}', {{ mosparo.options|json_encode|raw }}));
