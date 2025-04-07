@@ -48,7 +48,7 @@ class MosparoType extends AbstractType
                 'inputFieldSelector' => '[name]:not(.mosparo__ignored-field)',
                 'loadCssResource' => true,
                 'requestSubmitTokenOnInit' => true,
-                'nonce' => null
+                'nonce' => ''
             ]
         );
 
