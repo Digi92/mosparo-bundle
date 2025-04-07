@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Digi92/mosparo-bundle/compare/v1.2.0...v1.3.0) (2025-04-07)
+
+
+### Features
+
+* add form type option for a nonce string on the initialization script block of mosparo ([8150594](https://github.com/Digi92/mosparo-bundle/commit/8150594d743ff20d9fbc093e9abd0147be588cf9))
+
 ## [1.2.2](https://github.com/arnaud-ritti/mosparo-bundle/compare/v1.2.1...v1.2.2) (2023-05-05)
 
 
