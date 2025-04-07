@@ -1,7 +1,7 @@
 {% block mosparo_widget %}
     {% if mosparo.enabled -%}
     <div id="{{ id }}"></div>
-    <script src="{{ mosparo.instance_url }}/build/mosparo-frontend.js" defer></script>
+    <script src="{{ mosparo.instance_url }}/build/mosparo-frontend.js" {% if mosparo.nonce is defined and mosparo.nonce is not empty %}nonce="{{ mosparo.nonce }}" {% endif %} defer></script>
     <script{% if mosparo.nonce is defined and mosparo.nonce is not empty %} nonce="{{ mosparo.nonce }}"{% endif %}>
       window.mosparoLayer = window.mosparoLayer || [];
       window.addEventListener('load', (event) => {
