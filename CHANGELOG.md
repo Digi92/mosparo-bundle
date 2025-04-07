@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Digi92/mosparo-bundle/compare/v1.3.0...v1.3.1) (2025-04-07)
+
+
+### Bug Fixes
+
+* fix default value of form option "nonce ([53fccc7](https://github.com/Digi92/mosparo-bundle/commit/53fccc7aefde47a0733463b817d03dc8c8b7a18a))
+
 ## [1.3.0](https://github.com/Digi92/mosparo-bundle/compare/v1.2.0...v1.3.0) (2025-04-07)
 
 
