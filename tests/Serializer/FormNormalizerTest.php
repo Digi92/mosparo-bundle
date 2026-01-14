@@ -52,11 +52,6 @@ class FormNormalizerTest extends TestCase
         self::assertSame($expected, $this->normalizer->getSupportedTypes(null));
     }
 
-    public function testCacheableSupportsMethod(): void
-    {
-        self::assertTrue($this->normalizer->hasCacheableSupportsMethod());
-    }
-
     public function testSupportsNormalizationWithWrongClass(): void
     {
         self::assertFalse($this->normalizer->supportsNormalization(new \stdClass()));

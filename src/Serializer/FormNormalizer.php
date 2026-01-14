@@ -34,10 +34,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\SubmitButton;
-use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
+class FormNormalizer implements NormalizerInterface
 {
     public function __construct(
         private EventDispatcherInterface $dispatcher,
@@ -53,7 +52,7 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
         return $this->convertFormToArray($object);
     }
 
-    public function supportsNormalization(mixed $data, ?string $format = null): bool
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         return $data instanceof FormInterface && $data->isSubmitted();
     }
@@ -152,16 +151,6 @@ class FormNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
         }
 
         return $key;
-    }
-
-    /**
-     * @deprecated since Symfony 6.3, use "getSupportedTypes()" instead
-     */
-    public function hasCacheableSupportsMethod(): bool
-    {
-        trigger_deprecation('symfony/serializer', '6.3', 'The "%s()" method is deprecated, use "getSupportedTypes()" instead.', __METHOD__);
-
-        return true;
     }
 
     public function getSupportedTypes(?string $format): array

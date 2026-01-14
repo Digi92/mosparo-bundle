@@ -120,7 +120,7 @@ class IsValidMosparoValidatorTest extends ConstraintValidatorTestCase
         $this->validator->initialize($this->context);
     }
 
-    protected function createValidator(): ConstraintValidatorInterface|InvocationMocker
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return $this->makeValidator();
     }

@@ -1,6 +1,6 @@
 {
     "name": "digi92/mosparo-bundle",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "type": "symfony-bundle",
     "description": "A Symfony bundle for mosparo spam protection",
     "keywords": [
