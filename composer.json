@@ -1,6 +1,6 @@
 {
-    "name": "digi92/mosparo-bundle",
-    "version": "1.4.1",
+    "name": "mahou/mosparo-bundle",
+    "version": "1.5.0",
     "type": "symfony-bundle",
     "description": "A Symfony bundle for mosparo spam protection",
     "keywords": [
