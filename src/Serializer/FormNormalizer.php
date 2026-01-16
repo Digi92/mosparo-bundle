@@ -100,8 +100,12 @@ class FormNormalizer implements NormalizerInterface
         return $data;
     }
 
-    private function parseFormData(FormInterface $form, array &$data, array $ignoredFieldTypes = [], array $verifiableFieldTypes = []): void
-    {
+    private function parseFormData(
+        FormInterface $form,
+        array &$data,
+        array $ignoredFieldTypes = [],
+        array $verifiableFieldTypes = [],
+    ): void {
         if ($form->count() > 0) {
             foreach ($form->all() as $field) {
                 $this->parseFormData($field, $data, $ignoredFieldTypes, $verifiableFieldTypes);

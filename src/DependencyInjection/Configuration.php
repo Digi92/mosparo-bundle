@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('mosparo');
         $rootNode = $treeBuilder->getRootNode();
+        /* @phpstan-ignore-next-line */
         $rootNode
             ->addDefaultsIfNotSet()
             ->fixXmlConfig('project')
