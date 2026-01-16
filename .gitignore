@@ -4,6 +4,8 @@ composer.lock
 .phpunit.result.cache
 /phpunit.xml
 vendor/*
+var/test/cache/
+var/test/coverage/
 /.idea
 /.phpcs-cache
 /node_modules

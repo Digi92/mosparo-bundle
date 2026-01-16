@@ -32,7 +32,7 @@ return $config
         '@PSR12' => true,
         '@Symfony' => true,
         '@Symfony:risky' => true,
-        '@PHPUnit48Migration:risky' => true,
+        '@PHPUnit4x8Migration:risky' => true,
         'array_syntax' => ['syntax' => 'short'],
         'fopen_flags' => false,
         'ordered_imports' => true,
