@@ -21,7 +21,7 @@ jobs:
         strategy:
             matrix:
                 php-version: ['8.1']
-                symfony-version: ['6.2']
+                symfony-version: ['7.4']
         steps:
             - name: 'Checkout code'
               uses: actions/checkout@v4
