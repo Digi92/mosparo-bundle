@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/Digi92/mosparo-bundle/compare/1.3.2...v1.3.3) (2026-01-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump actions/checkout from 4 to 6 ([c912e82](https://github.com/Digi92/mosparo-bundle/commit/c912e82135720a15667cd80d7f8a6dd1fa1b53c0))
+
 ## [1.3.2](https://github.com/Digi92/mosparo-bundle/compare/v1.3.1...v1.3.2) (2025-04-07)
 
 ### Features
