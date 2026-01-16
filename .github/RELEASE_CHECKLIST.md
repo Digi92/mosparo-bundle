@@ -7,7 +7,7 @@
 4.  Prepare the changelog of the new version with the custom `changelog` Git
     command. Example: `git changelog v1.12.5` (the version passed to the command
     is the previous version used as a reference to list the changes).
-5.  Go to https://github.com/arnaud-ritti/mosparo-bundle/releases and click
+5.  Go to https://github.com/Digi92/mosparo-bundle/releases and click
     on `Draft a new release`. Select the tag pushed before and paste the
     changelog contents.
 

@@ -44,7 +44,7 @@ First you must clone the repository, then create a feature branch and finally,
 submit a pull request via GitHub.
 
 Read the [Symfony contribution guide][sf-contribution] for more details and replace
-`symfony/symfony-docs` by `Mosparo/MosparoBundle` in every example.
+`symfony/symfony-docs` by `mahou/mosparo-bundle` in every example.
 
 ## Further information
 
@@ -57,9 +57,9 @@ Read the [Symfony contribution guide][sf-contribution] for more details and repl
 
 [gh-pr]: https://help.github.com/send-pull-requests
 
-[mosparo-bundle-issues]: https://github.com/arnaud-ritti/mosparo-bundle/issues?utf8=%E2%9C%93&q=is%3Aissue
+[mosparo-bundle-issues]: https://github.com/Digi92/mosparo-bundle/issues
 
-[create-issue]: https://github.com/arnaud-ritti/mosparo-bundle/issues/new
+[create-issue]: https://github.com/Digi92/mosparo-bundle/issues/new
 
 [symfony-standard]: https://github.com/symfony/symfony-standard
 
